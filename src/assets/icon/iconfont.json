@@ -1,0 +1,79 @@
+{
+  "id": "1605083",
+  "name": "美餐安前端",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "700853",
+      "name": "头像",
+      "font_class": "touxiang",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+      "icon_id": "1002521",
+      "name": "首页",
+      "font_class": "shouye",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "1554961",
+      "name": "下拉",
+      "font_class": "xiala",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "6275359",
+      "name": "定位",
+      "font_class": "icon-test",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "7090027",
+      "name": "店铺",
+      "font_class": "dianpu",
+      "unicode": "e70a",
+      "unicode_decimal": 59146
+    },
+    {
+      "icon_id": "7708016",
+      "name": "资讯",
+      "font_class": "zixun",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "12744740",
+      "name": "店铺",
+      "font_class": "dianpu-copy",
+      "unicode": "e70b",
+      "unicode_decimal": 59147
+    },
+    {
+      "icon_id": "12744743",
+      "name": "资讯",
+      "font_class": "zixun-copy",
+      "unicode": "e70c",
+      "unicode_decimal": 59148
+    },
+    {
+      "icon_id": "12744745",
+      "name": "头像",
+      "font_class": "touxiang-copy",
+      "unicode": "e70d",
+      "unicode_decimal": 59149
+    },
+    {
+      "icon_id": "12744747",
+      "name": "首页",
+      "font_class": "shouye-copy",
+      "unicode": "e70e",
+      "unicode_decimal": 59150
+    }
+  ]
+}
