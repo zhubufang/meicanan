@@ -19,11 +19,10 @@ module.exports = {
 	devServer: {
 		disableHostCheck: true,
 	},
-	productionSourceMap: false,
+	productionSourceMap: true,
 	configureWebpack: config => {
 		if (process.env.NODE_ENV === 'production') {
 			config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true
-			//config.devtool = 'cheap-source-map'
 			// 为生产环境修改配置...
 			config.mode = 'production'
 			return {
@@ -33,17 +32,24 @@ module.exports = {
 					deleteOriginalAssets: true //是否删除原文件
 				})]
 			}
+		} else {
+			config.devtool = 'eval-source-map'
 		}
 	},
 	chainWebpack(config) {
 		config.resolve.alias
 			.set('components', resolve('src/components'))
 			.set('common', resolve('src/common'))
-		config
-			.plugin('webpack-bundle-analyzer')
-			.use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
-			.end();
-		config.plugins.delete('prefetch')
+		/* 添加分析工具*/
+		if (process.env.NODE_ENV === 'production') {
+			if (process.env.npm_config_report) {
+				config
+					.plugin('webpack-bundle-analyzer')
+					.use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
+					.end();
+				config.plugins.delete('prefetch')
+			}
+		}
 	},
 	pluginOptions: {
 		'cube-ui': {

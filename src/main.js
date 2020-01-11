@@ -13,7 +13,7 @@ import './assets/icon/iconfont.js'
 
 import { service } from './api/request'
 Vue.prototype.$service = service
-
+console.log(process.env.NODE_ENV)
 new Vue({
   router,
   store,
