@@ -9,14 +9,14 @@
         <mt-button
           type="primary"
           size="small"
-          style="line-height: 40px;height: 40px;background-color:#2F7364;border-radius: 0px;"
+          style="line-height: 48px;height: 48px;background-color:#2F7364;border-radius: 0px;"
         >搜索</mt-button>
       </div>
     </div>
 
     <div class="fenlei">
       <ul class="flex flex-justify-between">
-        <li class="flex-item flex flex-column flex-align-center flex-justify-center">
+        <li class="flex-item flex flex-column flex-align-center flex-justify-center m-right">
           <img src="../../assets/logo.png" width="50px" height="50px" />
           <p>美食</p>
         </li>
@@ -24,7 +24,7 @@
           <img src="../../assets/logo.png" width="50px" height="50px" />
           <p>颐养之家</p>
         </li>
-        <li class="flex-item flex flex-column flex-align-center flex-justify-center">
+        <li class="flex-item flex flex-column flex-align-center flex-justify-center m-left">
           <img src="../../assets/logo.png" width="50px" height="50px" />
           <p>学校</p>
         </li>
@@ -32,7 +32,7 @@
     </div>
 
     <div class="store">
-      <ul class="flex flex-justify-between m-bottom">
+      <ul class="flex flex-justify-between m-bottom" style="padding:0 10px">
         <li
           v-for="(item,index) in saixuan"
           :key="index"
@@ -44,7 +44,7 @@
       <div class="store-list">
         <div
           style="padding: 10px;"
-          :class="['flex','list', 'm-bottom']"
+          :class="['flex','list', 'm-bottom','b-radius']"
           v-for="(item,index) in 6"
           :key="index"
           @click="navTo('/yanglaoyuan',{})"
@@ -75,11 +75,11 @@ export default {
       code: null,
       params: null,
       isActive: 0,
-	  saixuan: ["综合排序", "距离最近", "好评优先"],
-	  page:{
-		  page:1,
-		  pageSize:10
-	  }
+      saixuan: ["综合排序", "距离最近", "好评优先"],
+      page: {
+        page: 1,
+        pageSize: 10
+      }
     };
   },
   mounted() {
@@ -104,13 +104,13 @@ export default {
         query: query
       });
     },
-   
-	//监听上拉刷新
-	pullingUp() {
-		this.page.page++
-		//this.$refs.scroll.refresh()
-		console.log('上拉刷新')
-	},
+
+    //监听上拉刷新
+    pullingUp() {
+      this.page.page++;
+      //this.$refs.scroll.refresh()
+      console.log("上拉刷新");
+    },
     chooseItem(index) {
       this.isActive = index;
       console.log(this.isActive);
@@ -149,15 +149,15 @@ export default {
   flex: 1;
   width: 100%;
   padding: 5px 10px 0;
+  background-color: #F6F6F6; 
 
   .header {
-    height: 40px;
     padding-top: 5px;
-
+	background-color: #ffffff; 
     .pos {
       width: 80px;
       text-align: left;
-      line-height: 40px;
+      line-height: 48px;
       color: #2F7364;
 
       i {
@@ -168,7 +168,7 @@ export default {
     .ipt {
       input {
         flex: 1;
-        height: 40px;
+        height: 48px;
         padding-left: 10px;
         color: #cccccc;
         border: 1px solid #ccc;
@@ -180,13 +180,13 @@ export default {
   .fenlei {
     height: 100px;
     margin-top: 10px;
+	background-color: #ffffff;
 
     ul {
       height: 100%;
 
       li {
         height: 100%;
-        border: 1px solid red;
 
         p {
           margin-top: 5px;
@@ -205,15 +205,14 @@ export default {
 
   .store-list {
     text-align: left;
-
+	background-color: #ffffff;
     .list {
       border: 1px solid #ccc;
     }
   }
 }
 
-.homePage>>>.mint-cell {
-  min-height: 40px;
+.homePage >>> .mint-cell-wrapper {
   border: 1px solid #ccc;
 }
 </style>
