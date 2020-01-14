@@ -6,6 +6,10 @@ import router from './router'
 import store from './store'
 Vue.config.productionTip = false
 
+//引入图标懒加载插件
+import VueLazyload from 'vue-lazyload'
+Vue.use(VueLazyload)
+
 
 // 引入阿里图标
 import './assets/icon/iconfont.css'

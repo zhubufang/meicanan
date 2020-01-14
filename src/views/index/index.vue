@@ -1,5 +1,5 @@
 <template>
-  <cube-scroll ref="scroll" class="homePage">
+  <scroll ref="scroll" class="homePage" :pullUpLoad="true" @pullingUp="pullingUp">
     <div class="header flex">
       <div class="pos">
         <i class="iconfont icon-icon-test" style="font-size: 24px;"></i>渝水区
@@ -61,23 +61,31 @@
         </div>
       </div>
     </div>
-  </cube-scroll>
+  </scroll>
 </template>
 
 <script>
+import Scroll from "components/scroll";
 export default {
+  components: {
+    Scroll
+  },
   data() {
     return {
       code: null,
       params: null,
       isActive: 0,
-      saixuan: ["综合排序", "距离最近", "好评优先"]
+	  saixuan: ["综合排序", "距离最近", "好评优先"],
+	  page:{
+		  page:1,
+		  pageSize:10
+	  }
     };
   },
   mounted() {
     //this.getCode();
     setTimeout(() => {
-      this.refresh();
+      this.$refs.scroll.refresh();
     }, 20);
     // const _this = this;
     // window.addEventListener(
@@ -96,9 +104,13 @@ export default {
         query: query
       });
     },
-    refresh() {
-      this.$refs.scroll.refresh();
-    },
+   
+	//监听上拉刷新
+	pullingUp() {
+		this.page.page++
+		//this.$refs.scroll.refresh()
+		console.log('上拉刷新')
+	},
     chooseItem(index) {
       this.isActive = index;
       console.log(this.isActive);

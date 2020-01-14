@@ -10,7 +10,7 @@
       @sticky-change="stickyChangeHandler"
     >
       <cube-scroll-nav-panel
-        v-for="item in data"
+        v-for="item in data" 
         :key="item.name"
         :label="item.name"
         :title="item.name"

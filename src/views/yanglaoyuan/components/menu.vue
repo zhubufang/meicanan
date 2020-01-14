@@ -5,7 +5,6 @@
       :data="data"
       ref="scrollNav"
       @change="changeHandler"
-      @sticky-change="stickyChangeHandler"
     >
     <!-- 如果需要自定义导航栏 -->
     <!-- <template slot="bar" slot-scope="props"></template> -->
