@@ -1,11 +1,12 @@
 <template>
   <div class="yanglaoyuan flex flex-column">
-    <mt-header title style="background-color: #2F7364;">
+    <my-header></my-header>
+    <!-- <mt-header title style="background-color: #2F7364;">
       <router-link to="/" slot="left">
         <mt-button icon="back" style="color:#FFFFFF;">返回</mt-button>
       </router-link>
-    </mt-header>
-    <div class="header">
+    </mt-header>-->
+    <div class="store">
       <div class="inner pos-c b-radius flex flex-align-center">
         <img src="../../assets/logo.png" class="storeImg" />
         <div
@@ -30,10 +31,12 @@
 </template>
 
 <script>
+import MyHeader from "components/header";
 import Tabs from "components/tabs";
 import Menu from "./components/menu";
 export default {
   components: {
+    MyHeader,
     Tabs
   },
   data() {
@@ -56,42 +59,21 @@ export default {
                     "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/750/h/750"
                 }
               ]
-			},
-			{
+            },
+            {
               name: "星期二",
               type: -1,
               foods: [
                 {
-                  name: "皮蛋瘦肉粥2",
-                  icon:
-                    "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/114/h/114",
-                  image:
-                    "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/750/h/750"
-				},
-				{
-                  name: "皮蛋瘦肉粥2-1",
-                  icon:
-                    "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/114/h/114",
-                  image:
-                    "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/750/h/750"
-				},
-				{
-                  name: "皮蛋瘦肉粥2-2",
-                  icon:
-                    "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/114/h/114",
-                  image:
-                    "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/750/h/750"
-				},
-				{
                   name: "皮蛋瘦肉粥2-3",
                   icon:
                     "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/114/h/114",
                   image:
                     "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/750/h/750"
-                },
+                }
               ]
-			},
-			{
+            },
+            {
               name: "星期三",
               type: -1,
               foods: [
@@ -170,13 +152,8 @@ export default {
   watch: {
     // selectedLabel(newVal, oldVal) {}
   },
-  mounted() {
-  
-  },
-  methods: {
-    
-    
-  }
+  mounted() {},
+  methods: {}
 };
 </script>
 
@@ -188,13 +165,12 @@ export default {
   height: 25vw;
 }
 
-
 .yanglaoyuan {
   width: 100%;
   height: 100%;
   color: #000;
 
-  .header {
+  .store {
     position: relative;
     height: 45vw;
     border-bottom-right-radius: 30%;
@@ -213,7 +189,6 @@ export default {
   }
 
   .fenlei {
-
   }
 }
 </style>
