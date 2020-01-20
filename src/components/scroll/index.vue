@@ -1,5 +1,6 @@
 <template>
   <cube-scroll
+    class="scroll"
     ref="scroll"
     :data="data"
     :direction="direction"
@@ -45,7 +46,7 @@ export default {
           : false
       },
       pullUploadParams: {
-        threshold: 90,
+        threshold: 50,
         txt: {
           more: "加载中...",
           noMore: "没有更多数据了"
@@ -74,5 +75,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="stylus">
+.scroll >>> .after-trigger {
+  padding: 10px 0 !important;
+}
+
 </style>

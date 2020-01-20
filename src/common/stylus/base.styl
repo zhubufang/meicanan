@@ -87,10 +87,27 @@ body, html {
   border-radius: 8px;
 }
 
+.b-radius-5 {
+  border-radius: 50%;
+}
+
 .pos-c {
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
+}
+
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: ''; /* 不用有内容也可以 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
 }

@@ -16,9 +16,20 @@ import './assets/icon/iconfont.css'
 import './assets/icon/iconfont.js'
 
 import { service } from './api/request'
+import { navTo } from './utils/base'
 Vue.prototype.$service = service
+Vue.prototype.$navTo = navTo
 new Vue({
   router,
   store,
   render: h => h(App),
 }).$mount('#app')
+
+// 生成vNode createElement函数
+// render(createElement) => {
+//   return createElement('div',{
+//     attrs:{
+//       id:'#app'
+//     }
+//   },this.message)
+// }

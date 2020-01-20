@@ -4,27 +4,20 @@
       <div class="pos">
         <i class="iconfont icon-icon-test" style="font-size: 24px;"></i>渝水区
       </div>
-      <div class="ipt flex flex-item">
-        <mt-field placeholder="搜索" v-model="params" class="flex-item"></mt-field>
-        <mt-button
-          type="primary"
-          size="small"
-          style="line-height: 48px;height: 48px;background-color:#2F7364;border-radius: 0px;"
-        >搜索</mt-button>
-      </div>
+      <cube-input v-model="params" class="flex-item" ref="input"></cube-input>
     </div>
 
     <div class="fenlei">
       <ul class="flex flex-justify-between">
-        <li class="flex-item flex flex-column flex-align-center flex-justify-center m-right">
+        <li class="flex-item flex flex-column flex-align-center flex-justify-center m-right" @click="$navTo('/searchStore',{})">
           <img src="../../assets/logo.png" width="50px" height="50px" />
           <p>美食</p>
         </li>
-        <li class="flex-item flex flex-column flex-align-center flex-justify-center">
+        <li class="flex-item flex flex-column flex-align-center flex-justify-center" @click="$navTo('/searchStore',{})">
           <img src="../../assets/logo.png" width="50px" height="50px" />
           <p>颐养之家</p>
         </li>
-        <li class="flex-item flex flex-column flex-align-center flex-justify-center m-left">
+        <li class="flex-item flex flex-column flex-align-center flex-justify-center m-left" @click="$navTo('/searchStore',{})">
           <img src="../../assets/logo.png" width="50px" height="50px" />
           <p>学校</p>
         </li>
@@ -45,9 +38,9 @@
         <div
           style="padding: 10px;"
           :class="['flex','list', 'm-bottom','b-radius']"
-          v-for="(item,index) in 6"
+          v-for="(item,index) in 10"
           :key="index"
-          @click="navTo('/yanglaoyuan',{})"
+          @click="$navTo('/school',{})"
         >
           <img src="../../assets/logo.png" width="80px" height="80px" />
           <div style="margin-left:10px" class="flex flex-column flex-justify-between flex-item">
@@ -97,14 +90,6 @@ export default {
     // );
   },
   methods: {
-    navTo(url, query) {
-      this.$store.commit("transition/SETPAGESTATE", "turn-on");
-      this.$router.push({
-        path: url,
-        query: query
-      });
-    },
-
     //监听上拉刷新
     pullingUp() {
       this.page.page++;
@@ -157,22 +142,11 @@ export default {
     .pos {
       width: 80px;
       text-align: left;
-      line-height: 48px;
+      line-height: 43px;
       color: #2F7364;
 
       i {
         vertical-align: middle;
-      }
-    }
-
-    .ipt {
-      input {
-        flex: 1;
-        height: 48px;
-        padding-left: 10px;
-        color: #cccccc;
-        border: 1px solid #ccc;
-        border-right: none;
       }
     }
   }
@@ -180,7 +154,7 @@ export default {
   .fenlei {
     height: 100px;
     margin-top: 10px;
-	background-color: #ffffff;
+	  background-color: #ffffff;
 
     ul {
       height: 100%;

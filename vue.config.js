@@ -40,6 +40,7 @@ module.exports = {
 		config.resolve.alias
 			.set('components', resolve('src/components'))
 			.set('common', resolve('src/common'))
+			.set('assets', resolve('src/assets'))
 		/* 添加分析工具*/
 		if (process.env.NODE_ENV === 'production') {
 			if (process.env.npm_config_report) {
@@ -53,7 +54,7 @@ module.exports = {
 	},
 	pluginOptions: {
 		'cube-ui': {
-			postCompile: false,
+			postCompile: true,
 			theme: false
 		}
 	}

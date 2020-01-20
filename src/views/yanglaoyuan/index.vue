@@ -34,6 +34,9 @@
 import MyHeader from "components/header";
 import Tabs from "components/tabs";
 import Menu from "./components/menu";
+import HomeDetail from "./components/homeDetail";
+import Oldman from "./components/oldman";
+import Video from "./components/video";
 export default {
   components: {
     MyHeader,
@@ -44,7 +47,7 @@ export default {
       selectedLabel: "洁厨亮灶",
       tabLabels: [
         {
-          label: "洁厨亮灶",
+          label: "菜谱",
           component: Menu,
           data: [
             {
@@ -90,60 +93,18 @@ export default {
         },
         {
           label: "颐养之家信息",
-          component: Menu,
-          data: [
-            {
-              name: "星期一",
-              type: -1,
-              foods: [
-                {
-                  name: "皮蛋瘦肉粥",
-                  icon:
-                    "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/114/h/114",
-                  image:
-                    "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/750/h/750"
-                }
-              ]
-            }
-          ]
+          component: HomeDetail,
+          data: []
         },
         {
           label: "老人信息列表",
-          component: Menu,
-          data: [
-            {
-              name: "星期一",
-              type: -1,
-              foods: [
-                {
-                  name: "皮蛋瘦肉粥",
-                  icon:
-                    "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/114/h/114",
-                  image:
-                    "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/750/h/750"
-                }
-              ]
-            }
-          ]
+          component: Oldman,
+          data: []
         },
         {
-          label: "菜谱",
-          component: Menu,
-          data: [
-            {
-              name: "星期一",
-              type: -1,
-              foods: [
-                {
-                  name: "皮蛋瘦肉粥",
-                  icon:
-                    "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/114/h/114",
-                  image:
-                    "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/750/h/750"
-                }
-              ]
-            }
-          ]
+          label: "洁厨亮灶",
+          component: Video,
+          data: []
         }
       ]
     };

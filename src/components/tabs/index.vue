@@ -12,9 +12,7 @@
       class="scroll-c"
     >
       <cube-slide-item v-for="(tab,index) in tabs" :key="index">
-        <keep-alive>
           <component ref="component" :is="tab.component" :data="tab.data"></component>
-        </keep-alive>
       </cube-slide-item>
     </cube-slide>
   </div>

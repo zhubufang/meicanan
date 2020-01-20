@@ -14,10 +14,21 @@ let router = new Router({
             path: '/sign',
             component: () => import('@/views/sign'),
         },
-		{
-		    path: '/yanglaoyuan',
-		    component: () => import('@/views/yanglaoyuan'),
-		},
+        //颐养之家
+        {
+            path: '/yanglaoyuan',
+            component: () => import('@/views/yanglaoyuan'),
+        },
+        //颐养之家搜索列表
+        {
+            path: '/searchStore',
+            component: () => import('@/views/searchStore'),
+        },
+        //学校
+        {
+            path: '/school',
+            component: () => import('@/views/school'),
+        },
         {
             path: '/index',
             component: () => import('@/views/layout'),
@@ -26,21 +37,19 @@ let router = new Router({
                     path: 'index',
                     component: () => import('@/views/index'),
                 },
+                //资讯
                 {
-                    path: 'mealTable',
-                    component: () => import('@/views/mealTable'),
+                    path: 'news',
+                    component: () => import('@/views/news'),
                 },
+                //用户
                 {
-                    path: 'score',
-                    component: () => import('@/views/score'),
+                    path: 'user',
+                    component: () => import('@/views/user'),
                 },
-                {
-                    path: 'messageBoard',
-                    component: () => import('@/views/messageBoard'),
-                }
             ]
         }
-    
+
     ]
 });
 
